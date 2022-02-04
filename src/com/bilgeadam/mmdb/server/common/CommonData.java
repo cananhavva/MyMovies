@@ -12,7 +12,7 @@ public class CommonData {
 	private Object logger;
 	
 	private CommonData() {
-		this.port = Integer.MAX_VALUE;
+		this.setPort(Integer.MAX_VALUE);
 		
 	}
 	
@@ -41,20 +41,21 @@ public class CommonData {
 	}
 	
 	public void logInfo(String msg) {
-		this.getLogger().info(msg);
+		((Logger) this.getLogger()).info(msg);
 		
 	}
 	
 	private Object getLogger() {
 		if (this.logger == null) {
 			this.logger = Logger.getLogger("My Movie Server Logger");
-			this.getLogger().setlevel(Level.parse(Props.getInstance().getProperties().getProperty("LOG_LEVEL")));
+			((Logger) this.getLogger())
+					.setLevel(Level.parse(Props.getInstance().getProperties().getProperty("LOG_LEVEL")));
 		}
 		return null;
 	}
 	
 	public void importData() {
-		CommonData.getInstance().getLogger().info("Enter import Data");
+		((Logger) CommonData.getInstance().getLogger()).info("Enter import Data");
 		if (this.nameDataExisting()) {
 			this.deserializeNames();
 		} else {
@@ -106,6 +107,14 @@ public class CommonData {
 	public void logError(String message) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	public int getPort() {
+		return port;
+	}
+
+	public void setPort(int port) {
+		this.port = port;
 	}
 	
 }
