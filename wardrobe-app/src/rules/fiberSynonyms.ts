@@ -1,0 +1,61 @@
+import type { FiberType } from '@/domain/types';
+
+/**
+ * Fibre names as they appear on labels and product pages in TR / EN / DE / FR / ES / IT.
+ * Multi-word entries are matched before single words (see compositionParser).
+ */
+export const FIBER_SYNONYMS: Readonly<Record<FiberType, readonly string[]>> = {
+  cashmere: ['kaşmir', 'cashmere', 'kaschmir', 'cachemire', 'cachemira'],
+  silk: ['ipek', 'silk', 'seide', 'soie', 'seda', 'seta'],
+  merino: ['merino', 'merino yün', 'merino wool', 'merinowolle', 'laine mérinos', 'mérinos', 'lana merino'],
+  wool: ['yün', 'wool', 'virgin wool', 'wolle', 'schurwolle', 'laine', 'laine vierge', 'lana', 'lana virgen', 'lana vergine'],
+  alpaca: ['alpaka', 'alpaca', 'alpaga'],
+  mohair: ['mohair', 'moher', 'tiftik'],
+  linen: ['keten', 'linen', 'flax', 'leinen', 'lin', 'lino'],
+  organic_cotton: [
+    'organik pamuk',
+    'organic cotton',
+    'bio baumwolle',
+    'biobaumwolle',
+    'coton biologique',
+    'algodón orgánico',
+    'cotone biologico',
+  ],
+  cotton: ['pamuk', 'cotton', 'baumwolle', 'coton', 'algodón', 'cotone'],
+  leather: ['deri', 'hakiki deri', 'leather', 'genuine leather', 'leder', 'cuir', 'piel', 'cuero', 'pelle'],
+  suede: ['süet', 'suede', 'wildleder', 'daim', 'ante', 'scamosciato'],
+  down: ['kaz tüyü', 'ördek tüyü', 'kuş tüyü', 'down', 'daunen', 'duvet', 'plumón', 'piumino'],
+  lyocell: ['lyocell', 'liyosel', 'tencel'],
+  modal: ['modal'],
+  viscose: ['viskon', 'viskoz', 'viscose', 'viskose', 'rayon', 'viscosa'],
+  cupro: ['kupro', 'cupro', 'bemberg'],
+  nylon: ['naylon', 'nylon'],
+  polyamide: ['polyamid', 'poliamid', 'polyamide', 'poliamida', 'poliammide'],
+  recycled_polyester: [
+    'geri dönüştürülmüş polyester',
+    'geri dönüşümlü polyester',
+    'recycled polyester',
+    'recyceltes polyester',
+    'polyester recyclé',
+    'poliéster reciclado',
+    'poliestere riciclato',
+    'rpet',
+  ],
+  polyester: ['polyester', 'poliester', 'poliéster', 'poliestere'],
+  acrylic: ['akrilik', 'acrylic', 'acryl', 'acrylique', 'acrílico', 'acrilico'],
+  elastane: ['elastan', 'elastane', 'elasthan', 'élasthanne', 'elastano', 'spandex', 'lycra'],
+  pu_faux_leather: [
+    'suni deri',
+    'faux leather',
+    'vegan leather',
+    'kunstleder',
+    'similicuir',
+    'pu',
+    'polyurethane',
+    'poliüretan',
+    'polyurethan',
+    'polyuréthane',
+    'poliuretano',
+  ],
+  other: [],
+};

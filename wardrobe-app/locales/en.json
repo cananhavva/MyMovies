@@ -1,0 +1,5 @@
+{
+  "CFBundleDisplayName": "Wardrobe AI",
+  "NSCameraUsageDescription": "Wardrobe AI uses the camera so you can photograph your clothes and their care labels.",
+  "NSPhotoLibraryUsageDescription": "Wardrobe AI uses your photos so you can add clothes and outfit inspiration screenshots."
+}

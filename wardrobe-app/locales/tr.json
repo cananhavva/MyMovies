@@ -1,0 +1,5 @@
+{
+  "CFBundleDisplayName": "Gardırop AI",
+  "NSCameraUsageDescription": "Gardırop AI, kıyafetlerinin ve etiketlerinin fotoğrafını çekebilmen için kamerayı kullanır.",
+  "NSPhotoLibraryUsageDescription": "Gardırop AI, kıyafetlerini ve ilham aldığın kombinlerin ekran görüntülerini ekleyebilmen için fotoğraflarına erişir."
+}

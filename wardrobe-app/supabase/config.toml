@@ -1,0 +1,14 @@
+# Minimal Supabase CLI config for the AI proxy functions.
+project_id = "wardrobe-ai"
+
+[functions.analyze-garment]
+verify_jwt = true
+
+[functions.analyze-product-page]
+verify_jwt = true
+
+[functions.analyze-inspiration]
+verify_jwt = true
+
+[functions.gap-plan]
+verify_jwt = true
