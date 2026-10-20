@@ -87,7 +87,11 @@ export default function WardrobeScreen() {
         ListHeaderComponent={header}
         contentContainerStyle={styles.list}
         keyboardShouldPersistTaps="handled"
-        renderItem={({ item }) => <GarmentCard garment={item} onPress={() => router.push(`/garment/${item.id}`)} />}
+        renderItem={({ item }) => (
+          <View style={styles.cell}>
+            <GarmentCard garment={item} onPress={() => router.push(`/garment/${item.id}`)} />
+          </View>
+        )}
         ListEmptyComponent={
           isFilterActive(filter) ? (
             <EmptyState title={t('wardrobe.noResults')} actionLabel={t('wardrobe.clearFilters')} onAction={resetFilter} />
@@ -101,6 +105,8 @@ export default function WardrobeScreen() {
 const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.background, paddingHorizontal: spacing.sm },
   list: { paddingVertical: spacing.md },
+  // Fixed share per column so a lone last item doesn't stretch across the whole row.
+  cell: { width: `${100 / GRID_COLUMNS}%` },
   filterRow: { marginBottom: spacing.xs },
   count: { fontSize: fontSize.sm, color: colors.textMuted, marginVertical: spacing.sm },
 });

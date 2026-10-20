@@ -76,6 +76,7 @@
     "labelPhoto": "Label photo",
     "typeFabric": "Type fabric",
     "applyFabric": "Apply",
+    "demoSuggestion": "The AI server isn't connected yet: these are sample suggestions, your photo wasn't actually analysed. Adjust the fields yourself.",
     "lowConfidence": "AI wasn't sure about this photo. Please check the details; a photo on a plain background in daylight works best.",
     "aiHint": "✨ = suggested by AI. Tap any chip to change it.",
     "noMaterialTitle": "No fabric information found",

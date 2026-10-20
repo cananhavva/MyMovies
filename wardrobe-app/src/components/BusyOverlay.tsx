@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { ActivityIndicator, Modal, StyleSheet, Text, View } from 'react-native';
 import { colors, fontSize, radius, spacing } from '@/config/theme';
+import { useAiStore } from '@/store/aiStore';
 import { Button } from './Button';
 
 interface BusyOverlayProps {
@@ -8,11 +9,15 @@ interface BusyOverlayProps {
   onCancel: () => void;
 }
 
-/** Blocking progress with a cancel button (AbortController behind it). */
+/**
+ * Blocking progress with a cancel button (AbortController behind it). Stays hidden while the AI
+ * consent sheet is open: tasks start busy before the consent gate, and iOS can't stack two modals.
+ */
 export function BusyOverlay({ message, onCancel }: BusyOverlayProps) {
   const { t } = useTranslation();
+  const awaitingConsent = useAiStore((s) => s.consentRequest !== undefined);
   return (
-    <Modal visible={message !== undefined} transparent animationType="fade" onRequestClose={onCancel}>
+    <Modal visible={message !== undefined && !awaitingConsent} transparent animationType="fade" onRequestClose={onCancel}>
       <View style={styles.backdrop}>
         <View style={styles.box} accessibilityLiveRegion="polite">
           <ActivityIndicator size="large" color={colors.primary} />

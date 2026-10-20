@@ -39,7 +39,7 @@
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
-      "expo-router",
+      ["expo-router", { "asyncRoutes": false }],
       "expo-sqlite",
       "expo-secure-store",
       "expo-localization",

@@ -56,6 +56,6 @@ export function ChipGroup<T extends string | number>(props: MultiProps<T> | Sing
 
 const styles = StyleSheet.create({
   container: { marginBottom: spacing.md },
-  title: { fontSize: fontSize.sm, color: colors.textMuted, fontWeight: '600', marginBottom: spacing.sm, textTransform: 'uppercase' },
+  title: { fontSize: fontSize.sm, color: colors.textMuted, fontWeight: '600', marginBottom: spacing.sm },
   row: { flexDirection: 'row', flexWrap: 'wrap' },
 });

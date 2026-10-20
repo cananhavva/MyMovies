@@ -14,6 +14,7 @@ import { readLabelComposition } from '@/services/flows/addGarmentFlows';
 import { draftToGarment, withComposition } from '@/services/garmentDraft';
 import { newId } from '@/services/ids';
 import { pickImages } from '@/services/imagePicker';
+import { useAiStore } from '@/store/aiStore';
 import { useDraftStore } from '@/store/draftStore';
 import { useToastStore } from '@/store/toastStore';
 import { useWardrobeStore } from '@/store/wardrobeStore';
@@ -29,6 +30,7 @@ export default function ReviewScreen() {
   const { busyMessage, run, cancel } = useAbortableTask();
   const [error, setError] = useState<AppError | undefined>();
   const [nameError, setNameError] = useState<string | undefined>();
+  const isDemoSuggestion = useAiStore((s) => s.client?.kind === 'mock') && Object.values(draft.fieldSources).includes('ai');
 
   const addPhoto = async () => {
     const picked = await pickImages('gallery', { multiple: true });
@@ -69,6 +71,7 @@ export default function ReviewScreen() {
 
   return (
     <Screen footer={<Button label={t('review.save')} onPress={() => void submit()} />}>
+      {isDemoSuggestion ? <Notice tone="warning" message={t('review.demoSuggestion')} /> : null}
       {notice?.code === 'AI_LOW_CONFIDENCE' ? <Notice tone="warning" message={t('review.lowConfidence')} /> : null}
       {notice && notice.code !== 'AI_LOW_CONFIDENCE' && notice.code !== 'NO_MATERIAL_INFO' ? (
         <Notice message={messageOf(notice)} />

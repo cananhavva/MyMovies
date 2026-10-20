@@ -24,7 +24,7 @@ export function TextField({ label, hint, error, ...inputProps }: TextFieldProps)
 
 const styles = StyleSheet.create({
   container: { marginBottom: spacing.md },
-  label: { fontSize: fontSize.sm, color: colors.textMuted, fontWeight: '600', marginBottom: spacing.xs, textTransform: 'uppercase' },
+  label: { fontSize: fontSize.sm, color: colors.textMuted, fontWeight: '600', marginBottom: spacing.xs },
   input: {
     minHeight: MIN_TOUCH,
     borderWidth: 1,

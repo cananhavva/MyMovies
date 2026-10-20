@@ -39,7 +39,7 @@ export function GarmentCard({ garment, onPress }: GarmentCardProps) {
 }
 
 const styles = StyleSheet.create({
-  card: { flex: 1, margin: spacing.xs, backgroundColor: colors.surface, borderRadius: radius.md, overflow: 'hidden', paddingBottom: spacing.sm },
+  card: { margin: spacing.xs, backgroundColor: colors.surface, borderRadius: radius.md, overflow: 'hidden', paddingBottom: spacing.sm },
   pressed: { opacity: 0.85 },
   image: { width: '100%', aspectRatio: 3 / 4, backgroundColor: colors.chip },
   placeholder: { alignItems: 'center', justifyContent: 'center' },

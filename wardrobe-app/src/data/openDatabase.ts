@@ -1,6 +1,6 @@
-import { openDatabaseAsync } from 'expo-sqlite';
 import type { Database } from './database';
 import { runMigrations } from './migrations';
+import { openSqlite } from './sqlite';
 import { createGapRepository } from './gapRepository';
 import { createGarmentRepository } from './garmentRepository';
 import { createInspirationRepository } from './inspirationRepository';
@@ -20,8 +20,7 @@ let repositories: Repositories | undefined;
 
 export async function initRepositories(): Promise<Repositories> {
   if (repositories) return repositories;
-  const db = await openDatabaseAsync(DATABASE_NAME);
-  await db.execAsync('PRAGMA journal_mode = WAL; PRAGMA foreign_keys = ON;');
+  const db = await openSqlite(DATABASE_NAME);
   await runMigrations(db);
   repositories = {
     db,

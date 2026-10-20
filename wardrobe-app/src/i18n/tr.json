@@ -76,6 +76,7 @@
     "labelPhoto": "Etiket fotoğrafı",
     "typeFabric": "Kumaşı yaz",
     "applyFabric": "Uygula",
+    "demoSuggestion": "AI sunucusu henüz bağlı değil: bunlar örnek öneriler, fotoğrafın gerçekten analiz edilmedi. Alanları kendin düzelt.",
     "lowConfidence": "AI bu fotoğraftan emin olamadı. Lütfen detayları kontrol et; gün ışığında, düz zeminde çekilmiş fotoğraf en iyi sonucu verir.",
     "aiHint": "✨ = AI önerisi. Değiştirmek için herhangi bir etikete dokun.",
     "noMaterialTitle": "Kumaş bilgisi bulunamadı",

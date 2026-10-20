@@ -20,7 +20,12 @@ cd wardrobe-app
 npm install
 cp .env.example .env        # değerleri doldur (aşağıya bak)
 npx expo start              # QR kodu Expo Go ile okut, ya da a (Android) / i (iOS)
+npx expo start --web        # tarayıcıda önizleme
 ```
+
+Web önizlemesi aynı kodu çalıştırır; yalnızca birkaç servis tarayıcıya uyarlanmıştır (`*.web.ts`):
+veritabanı sql.js ile IndexedDB'de, fotoğraflar satır içinde data URI olarak tutulur, dışa aktarma
+dosya indirir.
 
 `.env` içindeki değerler **herkese açıktır** ve uygulama paketine gömülür:
 
